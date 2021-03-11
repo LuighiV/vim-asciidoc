@@ -14,7 +14,7 @@ function! s:set_makeprg()
         \. 'antora'
         \. ' --fetch'
         \. ' --stacktrace'
-        \. ' %/' . get(b:, 'antora_playbook', 'antora-playbook.yml')
+        \. ' ./' . get(b:, 'antora_playbook', 'antora-playbook.yml')
 endfunction
-antora --fetch --stacktrace antora-playbook.yml
+
 call s:set_makeprg()
