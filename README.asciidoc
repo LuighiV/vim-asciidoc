@@ -16,6 +16,8 @@ vim-asciidoc provides:
 [style="horizontal"]
 `:compiler asciidoc` :: To use the original Python Asciidoc
 `:compiler asciidoctor` :: To use the newer Ruby Asciidoctor
+`:compiler antora` :: To use website generator Antora for Asciidoc
+                      documentation.
 
 Each compiler provides a `:Theme` command for changing the style-sheet.
 
@@ -30,9 +32,18 @@ defaulting to the asciidoc default blue stylesheet.
 
 .Asciidoctor
 
+[style="horizontal"]
 `g:asciidoctor_themes_dir` :: The location of your CSS stylesheets
+
 `g:asciidoctor_theme` :: The name of your preferred default theme,
 defaulting to the asciidoctor default red stylesheet.
+
+.Antora
+Themes should be configured in the antora playbook. 
+In addition to this, you should specify which antora playbook the compiler
+should use via `b:antora_playbook`. If not set, it will use
+`antora-playbook.yml` located in the directory from where the compiler is
+called.
 
 ==== Live Reload
 
